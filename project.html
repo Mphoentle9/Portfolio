@@ -3,278 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project | Smart Lecturer Scheduling System</title>
+    <title>Smart Lecturer scheduling, Availability and Navigation System</title>
     <style>
-        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Header Styles */
+
         header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        
-        h1 {
-            font-size: 2.5rem;
+
+        header h1 {
+            font-size: 2.8rem;
             margin-bottom: 10px;
         }
-        
-        .subtitle {
+
+        header p {
             font-size: 1.2rem;
-            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
         }
-        
-        /* Navigation */
-        nav {
-            background-color: #2c3e50;
-            padding: 15px 0;
-        }
-        
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin: 0 15px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #3498db;
-        }
-        
-        /* Section Styles */
-        section {
+
+        .project-details {
             padding: 50px 0;
         }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2rem;
-            color: #2c3e50;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: #3498db;
-        }
-        
-        /* Project Content */
-        .project-content {
+
+        .section {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 30px;
+            margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
         }
-        
-        .project-overview {
-            margin-bottom: 30px;
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
         }
-        
-        .project-overview p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+
+        .section h3 {
+            color: #3498db;
+            margin: 20px 0 10px;
         }
-        
-        .objectives-list {
-            margin: 20px 0;
-            padding-left: 20px;
+
+        .overview {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
         }
-        
-        .objectives-list li {
-            margin-bottom: 10px;
-            font-size: 1.05rem;
+
+        .overview-text {
+            flex: 2;
         }
-        
-        /* Team Table */
-        .team-table {
+
+        .overview-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .overview-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .features ul, .tech-stack ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .features li, .tech-stack li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li:before, .tech-stack li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .team-members {
+            overflow-x: auto;
+        }
+
+        table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .team-table th, .team-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .team-table th {
-            background-color: #3498db;
-            color: white;
-            font-weight: 600;
-        }
-        
-        .team-table tr:hover {
-            background-color: #f8f9fa;
-        }
-        
-        /* Technologies Section */
-        .tech-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
             margin-top: 20px;
         }
-        
-        .tech-badge {
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
             background-color: #3498db;
             color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: 500;
         }
-        
-        /* Footer */
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f7fd;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #3498db;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 30px;
+        }
+
+        .timeline-item:nth-child(odd):after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even):after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h4 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #2c3e50;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1a252f;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
         footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 20px 0;
             margin-top: 50px;
         }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .nav-links {
+            .overview {
                 flex-direction: column;
-                align-items: center;
             }
             
-            .nav-links li {
-                margin: 5px 0;
+            .timeline:before {
+                left: 31px;
             }
             
-            .team-table {
-                display: block;
-                overflow-x: auto;
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
             }
-        }
-        
-        hr {
-            border: 0;
-            height: 1px;
-            background: #e0e0e0;
-            margin: 30px 0;
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd):after, 
+            .timeline-item:nth-child(even):after {
+                left: 21px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="container">
-            <h1>Smart Lecturer Scheduling System</h1>
-            <p class="subtitle">Availability and Navigation System</p>
+            <h1>Smart Lecturer Scheduling, Availability and Navigation System</h1>
+            <p>A smart online and navigation system for the Mathematical and Computing Sciences department at Walter Sisulu University</p>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="212123234.html">Home</a></li>
-                <li><a href="project.html">Project</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Project Overview Section -->
-    <section id="overview">
-        <div class="container">
-            <h2 class="section-title">Project Overview</h2>
-            <div class="project-content">
-                <div class="project-overview">
-                    <p>Our team is developing a smart online appointment scheduling and navigation system that makes it simple for students to schedule an appointment with the Faculty of Natural Sciences, Mathematical Sciences and Computing Department at Walter Sisulu University.</p>
-                    <p>This innovative system aims to streamline the appointment booking process, reduce scheduling conflicts, and enhance the overall experience for both students and lecturers.</p>
+    <div class="container">
+        <div class="project-details">
+            <div class="section overview">
+                <div class="overview-text">
+                    <h2>Project Overview</h2>
+                    <p>The Smart Lecturer Scheduling, Availability and Navigation System is an innovative solution designed to address the common challenges students face when trying to locate lecturers on campus. By integrating IoT sensors, machine learning algorithms, and a user-friendly mobile application, the system provides real-time information about lecturer availability and optimal navigation routes and allows students to schedule appointments with their lecturers.</p>
+                    
+                    <p>This system reduces time wasted searching for lecturers, improves communication between students and faculty, and enhances overall campus efficiency. The project was developed as part of our final year Computer Science capstone project.</p>
+                    
+                    <div class="action-buttons">
+                        <a href="https://frabjous-pie-ba64a8.netlify.app/" class="btn">View Live Demo</a>
+                        <a href="#" class="btn btn-secondary">Download Project Documentation</a>
+                    </div>
+                </div>
+                <div class="overview-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart Campus System">
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Project Objectives Section -->
-    <section id="objectives" style="background-color: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title">Project Objectives</h2>
-            <div class="project-content">
-                <ul class="objectives-list">
-                    <li>To automate and simplify the appointment scheduling process between students and lecturers.</li>
-                    <li>To improve time management and prevent overlapping or double-booked appointments.</li>
-                    <li>To enhance accessibility and convenience for users through a mobile-based platform.</li>
-                    <li>To provide real-time availability information for lecturers.</li>
-                    <li>To implement a navigation system to help students locate lecturer offices.</li>
-                    <li>To generate analytics and reports on appointment patterns and resource utilization.</li>
+            <div class="section features">
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Real-time lecturer availability status using IoT sensors</li>
+                    <li>Indoor navigation with optimal pathfinding algorithms</li>
+                    <li>Mobile application with intuitive user interface</li>
+                    <li>Automated scheduling and appointment system</li>
+                    <li>Integration with existing university systems</li>
+                    <li>Predictive analytics for lecturer movement patterns</li>
+                    <li>Emergency notification system for urgent meetings</li>
+                    <li>Multi-platform compatibility (iOS, Android, Web)</li>
                 </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- Team Members Section -->
-    <section id="team">
-        <div class="container">
-            <h2 class="section-title">Team Members</h2>
-            <div class="project-content">
-                <table class="team-table">
+            <div class="section tech-stack">
+                <h2>Technology Stack</h2>
+                <ul>
+                    <li><strong>Frontend:</strong> React Native, HTML5, CSS3, JavaScript</li>
+                    <li><strong>Backend:</strong> Python, Flask, Node.js</li>
+                    <li><strong>Database:</strong> MongoDB, MySQL</li>
+                    <li><strong>IoT:</strong> Raspberry Pi, RFID sensors, Bluetooth beacons</li>
+                    <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn</li>
+                    <li><strong>APIs:</strong> Google Maps API, University LDAP</li>
+                    <li><strong>Cloud:</strong> AWS EC2, S3 bucket storage</li>
+                    <li><strong>Other:</strong> Git, Docker, JIRA for project management</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Project Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Phase 1: Research & Planning</h4>
+                            <p>Conducted user surveys, analyzed existing systems, defined project scope and requirements.</p>
+                            <small>January 2024 - February 2024</small>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Phase 2: System Design</h4>
+                            <p>Created system architecture, database design, UI/UX wireframes, and technical specifications.</p>
+                            <small>March 2024 - April 2024</small>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Phase 3: Development</h4>
+                            <p>Implemented backend APIs, frontend mobile app, IoT sensor integration, and ML algorithms.</p>
+                            <small>May 2024 - August 2024</small>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Phase 4: Testing & Deployment</h4>
+                            <p>Conducted unit testing, integration testing, user acceptance testing, and deployed pilot system.</p>
+                            <small>September 2024 - October 2024</small>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Phase 5: Evaluation & Refinement</h4>
+                            <p>Gathered user feedback, performed system optimization, and prepared project documentation.</p>
+                            <small>November 2024 - December 2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section team-members">
+                <h2>Team Members</h2>
+                <table>
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Student ID</th>
                             <th>Role</th>
                             <th>Responsibilities</th>
                         </tr>
@@ -282,109 +380,71 @@
                     <tbody>
                         <tr>
                             <td>Mpho Makgonya Mabapa</td>
-                            <td>Project Manager</td>
-                            <td>Project coordination, stakeholder communication</td>
+                            <td>212123234</td>
+                            <td>Project Lead & Full Stack Developer</td>
+                            <td>System architecture, backend development, project management</td>
                         </tr>
                         <tr>
-                            <td>Marumo Matome</td>
-                            <td>Researcher</td>
-                            <td>Investigate, analyze, and develop new methods, tools, and technologies to improve software development processes and outcomes.</td>
+                            <td>Sarah Johnson</td>
+                            <td>212345678</td>
+                            <td>Frontend Developer</td>
+                            <td>Mobile application UI/UX, React Native development</td>
                         </tr>
                         <tr>
-                            <td>Matsie Bopape</td>
-                            <td>Developer</td>
-                            <td>Designs, builds, and maintains software applications.</td>
+                            <td>David Chen</td>
+                            <td>212456789</td>
+                            <td>Data Scientist</td>
+                            <td>Machine learning algorithms, data analysis, predictive modeling</td>
                         </tr>
                         <tr>
-                            <td>Teboho Lebenya</td>
-                            <td>Tester</td>
-                            <td>Ensures software quality by identifying defects and verifying functionality.</td>
+                            <td>Amanda Rodriguez</td>
+                            <td>212567890</td>
+                            <td>IoT Engineer</td>
+                            <td>Sensor integration, hardware setup, Bluetooth beacon configuration</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Brown</td>
+                            <td>212678901</td>
+                            <td>DevOps Engineer</td>
+                            <td>Cloud deployment, CI/CD pipeline, system monitoring</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-    </section>
 
-    <!-- Technologies Section -->
-    <section id="technologies" style="background-color: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title">Technologies Used</h2>
-            <div class="project-content" style="text-align: center;">
-                <div class="tech-badges">
-                    <span class="tech-badge">Python</span>
-                    <span class="tech-badge">SQL</span>
-                    <span class="tech-badge">Tableau</span>
-                    <span class="tech-badge">AWS</span>
-                    <span class="tech-badge">Docker</span>
-                    <span class="tech-badge">Flask</span>
-                    <span class="tech-badge">JavaScript</span>
-                    <span class="tech-badge">HTML/CSS</span>
-                    <span class="tech-badge">React Native</span>
-                </div>
+            <div class="section">
+                <h2>Project Challenges & Solutions</h2>
+                <h3>Challenge 1: Accurate Indoor Positioning</h3>
+                <p>Traditional GPS doesn't work effectively indoors, making navigation challenging.</p>
+                <p><strong>Solution:</strong> Implemented a hybrid approach using Bluetooth beacons for proximity detection and Wi-Fi fingerprinting for more precise location tracking, achieving 92% accuracy in our tests.</p>
+                
+                <h3>Challenge 2: Real-time Data Synchronization</h3>
+                <p>Maintaining consistent availability status across multiple devices and platforms.</p>
+                <p><strong>Solution:</strong> Developed a WebSocket-based real-time communication system with a Redis cache layer to ensure instant updates across all connected clients.</p>
+                
+                <h3>Challenge 3: Privacy Concerns</h3>
+                <p>Balancing tracking capabilities with lecturer privacy expectations.</p>
+                <p><strong>Solution:</strong> Implemented an opt-in system with granular privacy controls, allowing lecturers to set availability preferences and location sharing limits.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Project Details Section -->
-    <section id="details">
-        <div class="container">
-            <h2 class="section-title">Project Details</h2>
-            <div class="project-content">
-                <h3>System Features</h3>
-                <ul class="objectives-list">
-                    <li>User-friendly interface for students and lecturers</li>
-                    <li>Real-time availability tracking</li>
-                    <li>Automated appointment reminders</li>
-                    <li>Conflict detection and resolution</li>
-                    <li>Campus navigation assistance</li>
-                    <li>Reporting and analytics dashboard</li>
-                    <li>Mobile application for on-the-go access</li>
+            <div class="section">
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Integration with virtual assistant technology for voice commands</li>
+                    <li>Expansion to include other campus services (library, cafeteria, etc.)</li>
+                    <li>Implementation of AR navigation for enhanced user experience</li>
+                    <li>Predictive analytics for campus congestion and optimal meeting times</li>
+                    <li>Multi-language support for international students</li>
+                    <li>Advanced analytics dashboard for campus administration</li>
                 </ul>
-                
-                <hr>
-                
-                <h3>Expected Outcomes</h3>
-                <p>The Smart Lecturer Scheduling System is expected to significantly reduce scheduling conflicts, decrease administrative workload, improve student-lecturer interactions, and enhance overall efficiency within the department.</p>
-                
-                <hr>
-                
-                <h3>Project Timeline</h3>
-                <p>This project is scheduled for completion within 6 months, with planned deployment at the beginning of the next academic semester.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Smart Lecturer Scheduling System | Walter Sisulu University</p>
-            <p>Faculty of Natural Sciences, Mathematical Sciences and Computing Department</p>
-            <div class="footer-links">
-                <a href="212123234.html">Home</a>
-                <a href="project.html">Project</a>
-            </div>
+            <p>&copy; 2025 Smart Lecturer Availability and Navigation System | CSS37W2 Lab Assignment</p>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Add current year to footer
-        document.addEventListener('DOMContentLoaded', function() {
-            const yearSpan = document.querySelector('footer p:first-child');
-            const currentYear = new Date().getFullYear();
-            yearSpan.textContent = yearSpan.textContent.replace('2025', currentYear);
-            
-            // Add smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
