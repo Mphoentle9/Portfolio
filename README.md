@@ -3,10 +3,13 @@
 
 <div align="center">
 
-![Portfolio Banner](https://localhost/230326919)
 *Turning data into insights, models into solutions*
 
-[![Portfolio](https://img.shields.io/badge/🌐-Portfolio_Website-2c3e50?style=for-the-badge)](http://localhost/230326919)
+# 🚀 Live Portfolio
+
+➡️ **[View My Live Portfolio Here](https://mphoentle9.github.io/index.html)**
+
+*This README contains project documentation. Click the link above to see my interactive portfolio!*
 
 [![LinkedIn](https://img.shields.io/badge/💼-LinkedIn-0077B5?style=for-the-badge)]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/mpho-makgonya-mabapa-62b544366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app))
 [![Email](https://img.shields.io/badge/📧-Email-D14836?style=for-the-badge)](mailto:mpho.mabapa1109@gmail.com)
