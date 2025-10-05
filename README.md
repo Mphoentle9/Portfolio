@@ -47,22 +47,6 @@ I'm a passionate **Data Scientist** and **Machine Learning Engineer** with exper
 
 ---
 
-### 📈 **Predictive Analytics Framework**
-*Advanced forecasting models for business intelligence and decision support*
-
-**Tech Stack:** `Python` `Time Series` `ARIMA` `LSTM` `Tableau`
-
-[![View Project](https://img.shields.io/badge/🔍-View_Project-3498db?style=for-the-badge)](project-link)
-
----
-
-### 🏥 **Healthcare Diagnostic Assistant**
-*AI-powered diagnostic support system using medical imaging and patient data*
-
-**Tech Stack:** `Python` `Computer Vision` `CNN` `FastAPI` `Docker`
-
-[![View Project](https://img.shields.io/badge/🔍-View_Project-3498db?style=for-the-badge)](project-link)
-
 ## 📈 GitHub Stats
 
 <div align="center">
