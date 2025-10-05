@@ -3,12 +3,10 @@
 
 <div align="center">
 
-![Portfolio Banner](https://via.placeholder.com/1200x400/2c3e50/3498db?text=Data+Science+Portfolio)
 *Turning data into insights, models into solutions*
 
-[![Portfolio](https://img.shields.io/badge/🌐-Portfolio_Website-2c3e50?style=for-the-badge)](https://your-portfolio-link.com)
-[![LinkedIn](https://img.shields.io/badge/💼-LinkedIn-0077B5?style=for-the-badge)](https://linkedin.com/in/yourprofile)
-[![Email](https://img.shields.io/badge/📧-Email-D14836?style=for-the-badge)](mailto:mpho.mabapa@example.com)
+[![LinkedIn](https://img.shields.io/badge/💼-LinkedIn-0077B5?style=for-the-badge)]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/mpho-makgonya-mabapa-62b544366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app))
+[![Email](https://img.shields.io/badge/📧-Email-D14836?style=for-the-badge)](mailto:mpho.mabapa1109@gmail.com)
 
 </div>
 
